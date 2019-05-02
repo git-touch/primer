@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:primer/primer.dart';
 
 void main() => runApp(MyApp());
 
@@ -91,6 +92,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Label('default label', theme: PrimerTheme.primary),
+            Label('default label', theme: PrimerTheme.primary, outline: true),
             Text(
               'You have pushed the button this many times:',
             ),
