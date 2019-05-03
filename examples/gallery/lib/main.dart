@@ -94,6 +94,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Label('default label', theme: PrimerTheme.primary),
             Label('default label', theme: PrimerTheme.primary, outline: true),
+            StateLabel(StateLabelStatus.issueOpened),
+            StateLabel(StateLabelStatus.issueClosed),
+            StateLabel(StateLabelStatus.pullMerged),
             Text(
               'You have pushed the button this many times:',
             ),
