@@ -99,6 +99,15 @@ class _MyHomePageState extends State<MyHomePage> {
             StateLabel(StateLabelStatus.pullMerged),
             Alert('Flash message goes here.'),
             BranchName('a_new_feature_branch'),
+            Blankslate(
+              child: Column(
+                children: <Widget>[
+                  BlankslateTitle('This is a blank slate'),
+                  Text(
+                      'Use it to provide information when no dynamic content exists.'),
+                ],
+              ),
+            ),
             Text(
               'You have pushed the button this many times:',
             ),
