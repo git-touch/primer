@@ -1,7 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'octicons.dart';
+import 'colors.dart';
 
-const white = Color(0xffffffff);
+const openGreen = Color(0xff2cbe4e);
 
 enum PrimerTheme {
   primary,
@@ -11,7 +12,7 @@ enum PrimerTheme {
 }
 
 Map<PrimerTheme, Color> colorMap = {
-  PrimerTheme.primary: Color(0xff0366d6),
+  PrimerTheme.primary: PrimerColors.blue500,
 };
 
 class Label extends StatelessWidget {
@@ -36,7 +37,7 @@ class Label extends StatelessWidget {
         text,
         style: TextStyle(
           fontSize: 12,
-          color: outline ? mainColor : white,
+          color: outline ? mainColor : PrimerColors.white,
           fontWeight: FontWeight.w600,
         ),
       ),
@@ -68,27 +69,27 @@ class StateLabel extends StatelessWidget {
       case StateLabelStatus.issueOpened:
         text = 'Open';
         iconData = Octicons.issue_opened;
-        bgColor = Color(0xff2cbe4e);
+        bgColor = openGreen;
         break;
       case StateLabelStatus.issueClosed:
         text = 'Closed';
         iconData = Octicons.issue_closed;
-        bgColor = Color(0xffcb2431);
+        bgColor = PrimerColors.red600;
         break;
       case StateLabelStatus.pullOpened:
         text = 'Open';
         iconData = Octicons.git_pull_request;
-        bgColor = Color(0xff2cbe4e);
+        bgColor = openGreen;
         break;
       case StateLabelStatus.pullClosed:
         text = 'Closed';
         iconData = Octicons.git_pull_request;
-        bgColor = Color(0xffcb2431);
+        bgColor = PrimerColors.red600;
         break;
       case StateLabelStatus.pullMerged:
         text = 'Merged';
         iconData = Octicons.git_merge;
-        bgColor = Color(0xff6f42c1);
+        bgColor = PrimerColors.purple500;
         break;
     }
 
@@ -100,12 +101,12 @@ class StateLabel extends StatelessWidget {
       padding: EdgeInsets.all(6),
       child: Row(
         children: <Widget>[
-          Icon(iconData, color: white, size: 15),
+          Icon(iconData, color: PrimerColors.white, size: 15),
           SizedBox(width: 2),
           Text(
             text,
             style: TextStyle(
-              color: white,
+              color: PrimerColors.white,
               fontWeight: FontWeight.w600,
               fontSize: 14,
             ),
