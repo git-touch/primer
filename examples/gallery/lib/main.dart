@@ -97,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
             StateLabel(StateLabelStatus.issueOpened),
             StateLabel(StateLabelStatus.issueClosed),
             StateLabel(StateLabelStatus.pullMerged),
+            BranchName('a_new_feature_branch'),
             Text(
               'You have pushed the button this many times:',
             ),
