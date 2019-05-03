@@ -1,15 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'octicons.dart';
 import 'colors.dart';
+import 'utils.dart';
 
 const openGreen = Color(0xff2cbe4e);
-
-enum PrimerTheme {
-  primary,
-  warn,
-  error,
-  success,
-}
 
 Map<PrimerTheme, Color> colorMap = {
   PrimerTheme.primary: PrimerColors.blue500,
