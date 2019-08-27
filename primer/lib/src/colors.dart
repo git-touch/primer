@@ -1,6 +1,8 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/painting.dart';
 
-/// https//github.com/primer/css/blob/master/src/support/variables/colorsystem.scss
+/// Primer color system
+///
+/// [Official documentation](https://primer.style/css/support/color-system)
 class PrimerColors {
   static const gray000 = Color(0xfffafbfc);
   static const gray100 = Color(0xfff6f8fa);
