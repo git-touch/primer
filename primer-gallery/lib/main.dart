@@ -1,5 +1,9 @@
 import 'package:flutter_web/material.dart';
 import 'generated/primer.dart';
+import 'screens/alert.dart';
+import 'screens/blankslate.dart';
+import 'screens/branch_name.dart';
+import 'screens/label.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,6 +20,25 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class WidgetItem {
+  String name;
+  String description;
+  Widget Function() screenFactory;
+  WidgetItem(this.name, this.description, this.screenFactory);
+}
+
+List<WidgetItem> widgetItems = [
+  WidgetItem('Alert', 'Inform users of successful or pending actions',
+      () => AlertScreen()),
+  WidgetItem(
+      'Blankslate',
+      'Used when there is a lack of content within a page or section',
+      () => BlankslateScreen()),
+  WidgetItem('Branch Name', 'Git branch name', () => BranchNameScreen()),
+  WidgetItem(
+      'Label', 'Add contextual metadata to a design', () => LabelScreen()),
+];
+
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -24,31 +47,25 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
+      appBar: AppBar(title: Text(title)),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Label('default label', theme: PrimerTheme.primary),
-            Label('default label', theme: PrimerTheme.primary, outline: true),
-            StateLabel(StateLabelStatus.issueOpened),
-            StateLabel(StateLabelStatus.issueClosed),
-            StateLabel(StateLabelStatus.pullMerged),
-            Alert('Flash message goes here.'),
-            BranchName('a_new_feature_branch'),
-            Blankslate(
-              child: Column(
-                children: <Widget>[
-                  BlankslateTitle('This is a blank slate'),
-                  Text(
-                      'Use it to provide information when no dynamic content exists.'),
-                ],
-              ),
+            children: widgetItems.map((item) {
+          return InkWell(
+            child: ListTile(
+              title: Text(item.name),
+              subtitle: Text(item.description),
             ),
-          ],
-        ),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => Scaffold(
+                  appBar: AppBar(title: Text(item.name)),
+                  body: item.screenFactory(),
+                ),
+              ));
+            },
+          );
+        }).toList()),
       ),
     );
   }
