@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'generated/primer.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,7 +30,24 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[Text('Hello, World!')],
+          children: <Widget>[
+            Label('default label', theme: PrimerTheme.primary),
+            Label('default label', theme: PrimerTheme.primary, outline: true),
+            StateLabel(StateLabelStatus.issueOpened),
+            StateLabel(StateLabelStatus.issueClosed),
+            StateLabel(StateLabelStatus.pullMerged),
+            Alert('Flash message goes here.'),
+            BranchName('a_new_feature_branch'),
+            Blankslate(
+              child: Column(
+                children: <Widget>[
+                  BlankslateTitle('This is a blank slate'),
+                  Text(
+                      'Use it to provide information when no dynamic content exists.'),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
