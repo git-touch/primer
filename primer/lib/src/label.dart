@@ -93,7 +93,7 @@ class StateLabel extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(4)),
       ),
       padding: EdgeInsets.all(6),
-      child: Row(
+      child: Wrap(
         children: <Widget>[
           Icon(iconData, color: PrimerColors.white, size: 15),
           SizedBox(width: 2),
