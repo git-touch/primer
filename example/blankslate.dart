@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:primer/primer.dart';
 
-class BlankslateScreen extends StatelessWidget {
+/// Blankslate example
+class BlankslateExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(

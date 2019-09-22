@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:primer/primer.dart';
 
+/// Label example
 class LabelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
