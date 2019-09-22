@@ -11,11 +11,11 @@ before_script:
   - ./flutter/bin/flutter doctor
   - ./flutter/bin/flutter config --enable-web
 before_deploy:
-  - cd primer_gallery
-  - ../flutter/bin/flutter pub get
-  - ../flutter/bin/flutter build web
+  - ./flutter/bin/flutter pub get
+  - pub global activate flutter
+  - pub global run flutterdoc build
 deploy:
-  local-dir: primer_gallery/build/web
+  local-dir: flutterdoc/build/web
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
