@@ -11,7 +11,7 @@ before_install:
   - ./flutter/bin/flutter doctor
   - ./flutter/bin/flutter config --enable-web
 install:
-  - ./flutter/bin/flutter pub get
+  - ./flutter/bin/flutter pub get || true # TODO: example: no pubspec.yaml found
 script:
   - echo success
 before_deploy:
