@@ -6,12 +6,15 @@ addons:
       - ubuntu-toolchain-r-test # if we don't specify this, the libstdc++6 we get is the wrong version
     packages:
       - libstdc++6
-before_script:
+before_install:
   - git clone https://github.com/flutter/flutter.git -b dev
   - ./flutter/bin/flutter doctor
   - ./flutter/bin/flutter config --enable-web
-before_deploy:
+install:
   - ./flutter/bin/flutter pub get
+script:
+  - echo success
+before_deploy:
   - pub global activate flutter
   - pub global run flutterdoc build
 deploy:
