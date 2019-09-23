@@ -15,7 +15,7 @@ install:
 script:
   - echo success
 before_deploy:
-  - pub global activate flutter
+  - pub global activate flutterdoc
   - pub global run flutterdoc build
 deploy:
   local-dir: flutterdoc/build/web
