@@ -11,14 +11,14 @@ before_install:
   - ./flutter/bin/flutter doctor
   - ./flutter/bin/flutter config --enable-web
 install:
-  - ./flutter/bin/flutter pub get || true # TODO: example: no pubspec.yaml found
+  - ./flutter/bin/flutter pub get
 script:
   - echo success
 before_deploy:
   - pub global activate flutterdoc
   - pub global run flutterdoc build
 deploy:
-  local-dir: flutterdoc/build/web
+  local-dir: flutterdoc_gallery/build/web
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
