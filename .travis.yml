@@ -8,7 +8,7 @@ addons:
       - libstdc++6
 before_install:
   - git clone https://github.com/flutter/flutter.git -b dev
-  - export PATH=`PWD`/flutter/bin:$PATH
+  - export PATH=`pwd`/flutter/bin:$PATH
   - flutter doctor
   - flutter config --enable-web
 install:
