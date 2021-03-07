@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'colors.dart';
 
 class Blankslate extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
   final bool spacious;
   final bool cleanBackground;
 

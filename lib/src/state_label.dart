@@ -18,9 +18,9 @@ class StateLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String text;
-    IconData iconData;
-    Color bgColor;
+    late String text;
+    IconData? iconData;
+    Color? bgColor;
 
     switch (status) {
       case StateLabelStatus.issueOpened:

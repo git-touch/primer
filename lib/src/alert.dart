@@ -4,7 +4,7 @@ import 'utils.dart';
 
 class Alert extends StatelessWidget {
   final String text;
-  final PrimerTheme theme;
+  final PrimerTheme? theme;
 
   Alert(this.text, {this.theme});
 

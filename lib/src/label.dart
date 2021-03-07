@@ -10,14 +10,14 @@ Map<PrimerTheme, Color> colorMap = {
 
 class Label extends StatelessWidget {
   final String text;
-  final PrimerTheme theme;
+  final PrimerTheme? theme;
   final bool outline;
 
   Label(this.text, {this.theme, this.outline = false});
 
   @override
   Widget build(BuildContext context) {
-    var mainColor = colorMap[theme];
+    var mainColor = colorMap[theme!]!;
 
     return Container(
       padding: EdgeInsets.symmetric(vertical: 3, horizontal: 4),
